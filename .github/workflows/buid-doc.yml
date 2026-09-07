@@ -2,11 +2,11 @@ name: Build Documentation
 
 on:
   workflow_dispatch:
-  release:
-    types: [published]
-  push:
-    branches:
-      - main
+  # release:
+  #   types: [published]
+  # push:
+  #   branches:
+  #     - main
 
 concurrency:
   group: Buid-Documentation
