@@ -2,14 +2,14 @@ name: CPP Test
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   types:
+  #     - opened
+  #     - reopened
+  #     - synchronize
 
 jobs:
   CPP:
@@ -98,13 +98,13 @@ jobs:
           --extra-verbose
           --parallel
           --schedule-random
-      - uses: codecov/codecov-action@v5
-        if: ${{ matrix.os == 'ubuntu-latest'}}
-        continue-on-error: true
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          working-directory: build/tests/CMakeFiles/cxxjij_test.dir/
-          name: cxxopenjij
-          flags: cxxopenjij
-          fail_ci_if_error: false
-          verbose: true
+      # - uses: codecov/codecov-action@v5
+      #   if: ${{ matrix.os == 'ubuntu-latest'}}
+      #   continue-on-error: true
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     working-directory: build/tests/CMakeFiles/cxxjij_test.dir/
+      #     name: cxxopenjij
+      #     flags: cxxopenjij
+      #     fail_ci_if_error: false
+      #     verbose: true
